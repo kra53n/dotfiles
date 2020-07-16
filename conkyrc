@@ -1,0 +1,29 @@
+alignment top_right
+background yes
+update_interval 1
+gap_x 40
+gap_y 80
+
+draw_shades no
+use_xft yes
+xftfont Playlist-Script:size=15
+xftalpha 0.5
+border_inner_margin 0
+
+color1 2E1742
+color0 AE82B2
+
+TEXT
+${color1}TIME: ${font Playlist-Script:size=25}${time %l:%M}
+${color0}${hr 2}
+${font Playlist-Script:size=15}BATTERY:\
+${color1}\
+${font Playlist-Script:size=25} ${battery_percent}%
+${battery_bar}
+#
+#
+# date
+${font Pribambas-Regular:size=18}${color0}${time %d} \
+${color1}\
+${time %b} \
+${color0}${time %A}
