@@ -201,6 +201,8 @@ default_floating_border pixel 4
 
 ### KEYBINDINGS
 bindsym Shift+$mod+b exec firefox
+# screenshot
+bindsym --release Print exec gnome-screenshot -a -f ~/Рабочий\ стол/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # sreen brigthness controls
 # bindsym F3 exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -211,8 +213,9 @@ bindsym $mod+Shift+KP_1 exec konsole -e vim ~/.config/i3/config
 bindsym $mod+Shift+KP_2 exec obs
 bindsym $mod+Shift+KP_3 exec code-oss
 
+
 ### AUTOMATICALLY START APPLICATIONS
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id systemsettings5
 exec --no-startup-id conky
 exec --no-startup-id ~/.bin/background
@@ -221,6 +224,7 @@ exec --no-startup-id ~/.bin/background
 for_window [class="Manjaro-Settings-Manager"] floating enable border normal
 for_window [class="code-oss"] floating enable
 for_window [class="image-viewer"] floating enable
+for_window [class='thunar'] floating enable
 
 ### ENVIRONMENT
 # theme colors
