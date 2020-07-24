@@ -176,21 +176,22 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-      status_command i3status
-      mode dock
-      position top
-      colors{
-           background #210E2C
-           statusline #BA70E5
-           focused_workspace #BA70E5 #BA70E5 #210E2C
-           active_workspace   #333333 #5f676a #ffffff
-           inactive_workspace #333333 #222222 #888888
-           urgent_workspace   #2f343a #900000 #ffffff
-           binding_mode       #2f343a #900000 #ffffff
-}
-       font pango:DejaVu Sans Mono 9
-}
+#bar {
+#      status_command i3status
+#      mode dock
+#      position top
+#      colors{
+#           background #210E2C
+#           statusline #BA70E5
+#           focused_workspace #BA70E5 #BA70E5 #210E2C
+#           active_workspace   #333333 #5f676a #ffffff
+#           inactive_workspace #333333 #222222 #888888
+#           urgent_workspace   #2f343a #900000 #ffffff
+#           binding_mode       #2f343a #900000 #ffffff
+#}
+#       font pango:DejaVu Sans Mono 9
+#}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # window title alignment
 title_align center
@@ -212,6 +213,7 @@ bindsym --release Print exec gnome-screenshot -a -f ~/Рабочий\ стол/`
 bindsym $mod+Shift+KP_1 exec konsole -e vim ~/.config/i3/config
 bindsym $mod+Shift+KP_2 exec obs
 bindsym $mod+Shift+KP_3 exec code-oss
+bindsym $mod+Shift+KP_4 exec telegram-desktop
 
 
 ### AUTOMATICALLY START APPLICATIONS
@@ -225,6 +227,8 @@ for_window [class="Manjaro-Settings-Manager"] floating enable border normal
 for_window [class="code-oss"] floating enable
 for_window [class="image-viewer"] floating enable
 for_window [class='thunar'] floating enable
+for_window [class="vlc"] floating enable
+for_window [class='telegram-desktop'] floating enable
 
 ### ENVIRONMENT
 # theme colors
