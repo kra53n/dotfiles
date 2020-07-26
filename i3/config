@@ -191,7 +191,8 @@ bindsym $mod+r mode "resize"
 #}
 #       font pango:DejaVu Sans Mono 9
 #}
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/pol3/launch.sh
 
 # window title alignment
 title_align center
@@ -237,6 +238,11 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused #2F3D44 #2F3D44 #AD69AF #454948
 client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
 client.placeholder      #000000 #0c0c0c #ffffff #000000 
+
+# i3-gaps
+for_window [class="^.*"] border pixel 3
+gaps inner 3
+gaps outer 3
 
 
 focus_follows_mouse no
