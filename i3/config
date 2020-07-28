@@ -47,11 +47,12 @@ bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0D0922' -sb '#6C1177' -sf '#EEEEEE' -fn 'monospace-10' -p '-->'"
 
 # change focus
 bindsym $mod+h focus left
@@ -230,6 +231,7 @@ for_window [class="image-viewer"] floating enable
 for_window [class='thunar'] floating enable
 for_window [class="vlc"] floating enable
 for_window [class='telegram-desktop'] floating enable
+for_window [class='gedit'] floating enable
 
 ### ENVIRONMENT
 # theme colors
