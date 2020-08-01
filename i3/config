@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0D0922' -sb '#6C1177' -sf '#EEEEEE' -fn 'monospace-10' -p '-->'"
+bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0D0922' -sb '#6C1177' -sf '#EEEEEE' -fn 'Cousine-Regular-7' -p '-->'"
 
 # change focus
 bindsym $mod+h focus left
@@ -204,6 +204,8 @@ default_floating_border pixel 4
 
 ### KEYBINDINGS
 bindsym Shift+$mod+b exec firefox
+# sleep pc
+bindsym Shift+$mod+s exec $HOME/.bin/slp
 # screenshot
 bindsym --release Print exec gnome-screenshot -a -f ~/Рабочий\ стол/`date +%Y-%m-%d_%H:%M:%S`.png
 
