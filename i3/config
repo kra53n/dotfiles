@@ -222,7 +222,7 @@ bindsym $mod+Shift+KP_4 exec telegram-desktop
 
 ### AUTOMATICALLY START APPLICATIONS
 #exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id systemsettings5
+# exec --no-startup-id systemsettings5
 exec --no-startup-id conky
 exec --no-startup-id ~/.bin/background
 
