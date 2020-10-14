@@ -1,0 +1,42 @@
+#!/bin/python
+
+# program count parts of budget
+# author: Kra53n
+# data of creating: 06.06.20
+
+TOTAL = float(input('Put your number: '))
+
+def count(text, percent, num = TOTAL):
+    '''Function give final result for part
+    percent - example: you put 20 it measne 20%
+    '''
+    percent = num * percent / 100
+    print('{} - {}'.format(text, percent))
+
+    return percent
+
+if __name__ == '__main__':
+    '''
+    50 percents on investition
+    20 percents on goals
+    10 percents on myself
+    10 percents on charity
+
+    Investition:
+    50 percents on metal
+    30 percents on currency
+    20 percents on development
+
+    '''
+    print('\n')
+
+    invest = count('ON INVESTITION', 50)
+    count('On metal', 50, invest)
+    count('On currency', 30, invest)
+    count('On development', 20, invest)
+    print('\n')
+
+    count('On goals', 20)
+    count('On myself', 20)
+    count('On charity', 10)
+    input()

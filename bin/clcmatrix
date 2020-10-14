@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# clcmatrix - call cmatrix with my option of color
+
+cmatrix -C cyan -u 3
