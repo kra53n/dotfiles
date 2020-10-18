@@ -1,11 +1,23 @@
 #!/bin/bash
-
 comment=$1
 
-if [ -z "$comment" ]; then
-        comment='(<-_-><-_->)'
-fi
 
+### CONSTANTS
+KAOMOJI=(
+        '(<-_-><-_->)' '(* ^ ω ^)' '(￢‿￢ )' '(¯▿¯)'
+        '(.❛ ᴗ ❛.)' 'o(≧▽≦)o' '(⌒‿⌒)' '(◕‿◕)'
+        '♡( ◡‿◡ )' '(⌒_⌒;)' '(￢_￢;)' '(＃￣0￣)'
+        '(╥_╥)' '(×﹏×)' '┐(￣∀￣)┌' '(￣～￣;)'
+        'w(°ｏ°)w' '(⊙_⊙)' '(￣▽￣)ノ' '(^_~)'
+        )
+
+
+### EXECUTION
+if [ -z "$comment" ]; then
+        size=${#KAOMOJI[@]}
+        index=$(($RANDOM % $size))
+        comment=${KAOMOJI[$index]}
+fi
 
 git add .
 git commit -m $comment
