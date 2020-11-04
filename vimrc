@@ -22,33 +22,27 @@ Plugin 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 
 " bottom iformatio
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "colorchemes
-
-Plugin 'mhartington/oceanic-next'
+Plugin 'sainnhe/sonokai'
 
 
 " All of your Plugins must be added before the following line
-
 call vundle#end()            " required
-
 filetype plugin indent on    " required
 
 
 "mappings
-
 map <C-b> :NERDTreeToggle<CR>
 
 
 " colorcheme
-colorscheme OceanicNext
+colorscheme sonokai
 
 
 " other things which I don`t understand
-
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
 let g:Powerline_symbols = 'unicode'
 
@@ -61,7 +55,6 @@ endif
 
 
 " unicode symbols
-
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -77,7 +70,6 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 
 " airline symbols
-
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
