@@ -4,9 +4,29 @@
 # author: Kra53n
 # data of creating: 06.06.20
 
-TOTAL = float(input('Put your number: '))
+from xerox import copy as xerox_copy
+from os import system as os_system
+from time import sleep as time_sleep
 
-def count(text, percent, num = TOTAL):
+
+### FUNCTIONS
+def clear():
+    '''Function clear everything that was before in terminal
+    '''
+    os_system('clear')
+
+def greeting():
+    '''This function is write greeting
+    '''
+    word = 'B u d g e t  s c r i p t'
+    for i in range(len(word) + 1):
+        print(word[:i] + ' ')
+        time_sleep(0.2)
+        if i == len(word):
+            input()
+        clear()
+
+def count(text, percent, num):
     '''Function give final result for part
     percent - example: you put 20 it measne 20%
     '''
@@ -14,6 +34,7 @@ def count(text, percent, num = TOTAL):
     print('{} - {}'.format(text, percent))
 
     return percent
+
 
 if __name__ == '__main__':
     '''
@@ -28,15 +49,19 @@ if __name__ == '__main__':
     20 percents on development
 
     '''
+    # TODO: rewrite code with working xerox
+    # TODO: rewrite code as if we need in xerox we use flag -c or --clipboard
+    greeting()
+    TOTAL = float(input('Put your number: '))
     print('\n')
 
-    invest = count('ON INVESTITION', 50)
+    invest = count('ON INVESTITION', 50, TOTAL)
     count('On metal', 50, invest)
     count('On currency', 30, invest)
     count('On development', 20, invest)
     print('\n')
 
-    count('On goals', 20)
-    count('On myself', 20)
-    count('On charity', 10)
+    count('On goals', 20, TOTAL)
+    count('On myself', 20, TOTAL)
+    count('On charity', 10, TOTAL)
     input()
