@@ -46,14 +46,23 @@ def check_argvs():
     '''This function check argvs
     '''
     # TODO: write -h or --help
-    # TODO: write flag that will skpi introduction
     clipboard, money, total_money = 0, 0, 0
     if '-c' in argv[1:]:
         clipboard = True
     if '-m' in argv[1:]:
         money = True
         total_money = argv[argv.index('-m')+1]
-    return clipboard, money, total_money
+    if '-t' in argv[1:]:
+        telegram = True
+    return clipboard, money, total_money, telegram
+
+def telegram_write(message):
+    from telethon import TelegramClient
+    message = 'Budget\n'.upper() + message
+    api_id = 2427366
+    api_hash = '04d63abfaaabc6eecdc6bc80f829b128'
+    with TelegramClient('anon', api_id, api_hash) as client:
+        client.loop.run_until_complete(client.send_message('me', message))
 
 
 if __name__ == '__main__':
@@ -69,7 +78,7 @@ if __name__ == '__main__':
     20 percents on development
 
     '''
-    clipboard, money, total_money = check_argvs()
+    clipboard, money, total_money, telegram = check_argvs()
     # ask user about information about money
     if money == True:
         TOTAL = float(total_money)
@@ -86,7 +95,13 @@ if __name__ == '__main__':
     message += count('On goals', 20, TOTAL)
     message += count('On myself', 20, TOTAL)
     message += count('On charity', 10, TOTAL)
-    print(message)
+    if not telegram or not money:
+        print(message)
+    if telegram:
+        from sys import exit
+        telegram_write(message)
+        if money:
+            exit()
     # take message to clipboard
     if clipboard == True:
         xerox_copy(message)
