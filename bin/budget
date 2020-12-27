@@ -46,7 +46,7 @@ def check_argvs():
     '''This function check argvs
     '''
     # TODO: write -h or --help
-    clipboard, money, total_money = 0, 0, 0
+    clipboard, money, total_money, telegram = 0, 0, 0, 0
     if '-c' in argv[1:]:
         clipboard = True
     if '-m' in argv[1:]:
