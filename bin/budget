@@ -59,8 +59,8 @@ def check_argvs():
 def telegram_write(message):
     from telethon import TelegramClient
     message = 'Budget\n'.upper() + message
-    api_id = 2427366
-    api_hash = '04d63abfaaabc6eecdc6bc80f829b128'
+    api_id = 
+    api_hash = ''
     with TelegramClient('anon', api_id, api_hash) as client:
         client.loop.run_until_complete(client.send_message('me', message))
 
