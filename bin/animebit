@@ -5,6 +5,9 @@ from bs4 import BeautifulSoup
 
 ### CONSTANTS
 PATH = "https://anime-bit.ru"
+SKIP_WORDS = ("Ongoing",
+         "Full",
+         "Film",)
 
 
 ### FUNCTIONS
@@ -25,7 +28,7 @@ def get_strings_tag(html_doc, tag):
     strings = []
     for tag in soup.find_all(tag):
         string = tag.string
-        if (string == "Ongoing") or (string == "Full"):
+        if string in SKIP_WORDS:
             continue
         strings.append(tag.string)
     return strings
