@@ -27,7 +27,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "colorchemes
-" Plugin 'sainnhe/sonokai'
 Plugin 'arcticicestudio/nord-vim'
 
 
@@ -41,7 +40,6 @@ map <C-b> :NERDTreeToggle<CR>
 
 
 " colorcheme
-" colorscheme sonokai
 colorscheme nord
 
 
