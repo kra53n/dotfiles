@@ -9,6 +9,7 @@ set ruler
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
+set termguicolors
 
 
 set nocompatible              " be iMproved, required
@@ -26,7 +27,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "colorchemes
-Plugin 'sainnhe/sonokai'
+" Plugin 'sainnhe/sonokai'
+Plugin 'arcticicestudio/nord-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -39,7 +41,8 @@ map <C-b> :NERDTreeToggle<CR>
 
 
 " colorcheme
-colorscheme sonokai
+" colorscheme sonokai
+colorscheme nord
 
 
 " other things which I don`t understand
