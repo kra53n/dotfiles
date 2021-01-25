@@ -45,7 +45,6 @@ def count(text, percent, num, next_step = 'n'):
 def check_argvs():
     '''This function check argvs
     '''
-    # TODO: write -h or --help
     clipboard, money, total_money, telegram = 0, 0, 0, 0
     if '-c' in argv[1:]:
         clipboard = True
@@ -59,8 +58,8 @@ def check_argvs():
 def telegram_write(message):
     from telethon import TelegramClient
     message = 'Budget\n'.upper() + message
-    api_id = 
-    api_hash = ''
+    api_id = 2427366
+    api_hash = '04d63abfaaabc6eecdc6bc80f829b128'
     with TelegramClient('anon', api_id, api_hash) as client:
         client.loop.run_until_complete(client.send_message('me', message))
 
@@ -68,9 +67,9 @@ def telegram_write(message):
 if __name__ == '__main__':
     '''
     50 percents on investition
-    20 percents on goals
-    10 percents on myself
-    10 percents on charity
+    15 percents on goals
+    30 percents on myself
+    5 percents on charity
 
     Investition:
     50 percents on metal
@@ -92,9 +91,9 @@ if __name__ == '__main__':
     message += count('On currency', 30, invest)
     message += count('On development', 20, invest)
     message += '\n'
-    message += count('On goals', 20, TOTAL)
-    message += count('On myself', 20, TOTAL)
-    message += count('On charity', 10, TOTAL)
+    message += count('On goals', 15, TOTAL)
+    message += count('On myself', 30, TOTAL)
+    message += count('On charity', 5, TOTAL)
     if not telegram or not money:
         print(message)
     if telegram:
