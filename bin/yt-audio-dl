@@ -1,0 +1,12 @@
+#!/bin/bash
+# simplify downloading the music from videos
+
+# TODO: add rename option
+
+if [ -n "$1" ]; then
+        # case when user put link to the video
+        youtube-dl -x --audio-format mp3 "$1"
+else
+        # case when user don`t put link to the video
+        echo "You don\`t put link to the video"
+fi
