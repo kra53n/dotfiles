@@ -5,9 +5,11 @@ from bs4 import BeautifulSoup
 
 ### CONSTANTS
 PATH = "https://anime-bit.ru"
-SKIP_WORDS = ("Ongoing",
-         "Full",
-         "Film",)
+SKIP_WORDS = (
+    "Ongoing",
+    "Full",
+    "Film",
+)
 
 
 ### FUNCTIONS

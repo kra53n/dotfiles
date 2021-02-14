@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec konsole --hide-menubar
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -205,22 +205,23 @@ default_floating_border pixel 4
 ### KEYBINDINGS
 bindsym Shift+$mod+b exec firefox
 # sleep pc
-bindsym Shift+$mod+s exec $HOME/.bin/slp
+bindsym Shift+$mod+s exec "systemctl suspend"
 # screenshot
-bindsym --release Print exec gnome-screenshot -a -f ~/Рабочий\ стол/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym --release Print exec ~/.bin/screenshot
 
 # sreen brigthness controls
 # bindsym F3 exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym F2 exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Apps Launched width <SUPED> + <SHIFT> + <KEYPAD 1-9>
-bindsym $mod+Shift+KP_1 exec konsole -e vim ~/.config/i3/config
+bindsym $mod+Shift+KP_1 exec konsole --hide-menubar -e vim ~/.config/i3/config
 bindsym $mod+Shift+KP_2 exec obs
 bindsym $mod+Shift+KP_3 exec code-oss
 bindsym $mod+Shift+KP_4 exec telegram-desktop
-bindsym $mod+Shift+KP_5 exec konsole -e ~/.bin/budget
+bindsym $mod+Shift+KP_5 exec konsole --hide-menubar -e ~/.bin/budget
 bindsym $mod+Shift+KP_6 exec nm-applet
-bindsym $mod+Shift+KP_7 exec konsole -e vim ~/.bin/todo.md
+bindsym $mod+Shift+KP_7 exec konsole --hide-menubar -e vim ~/.bin/todo.md
+bindsym $mod+Shift+KP_8 exec $HOME/.bin/push_fill
 
 
 ### AUTOMATICALLY START APPLICATIONS
@@ -261,4 +262,4 @@ focus_follows_mouse no
 # for changing language toggle right control
 # for other bindings go to -
 # -> https://unix.stackexchange.com/questions/45447/other-than-alt-shift-to-switch-keyboard-layout-any-other-xorg-key-combination
-exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:rctrl_toggle"
+exec_always "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:rctrl_toggle"

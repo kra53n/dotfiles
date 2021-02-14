@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# launch pipes
-
-$HOME/.bin/pipes.sh/pipes.sh

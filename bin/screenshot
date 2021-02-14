@@ -1,0 +1,10 @@
+#!/bin/bash
+
+fileDate=`date +%Y-%m-%d_%H:%M:%S`
+machineName=`hostname`
+fileName=".png"
+FILENAME=$fileDate"-"$machineName$fileName
+FILENAMESHORT=$fileDate$fileName
+
+import $FILENAMESHORT
+mv $FILENAMESHORT $HOME/Рабочий\ стол/
