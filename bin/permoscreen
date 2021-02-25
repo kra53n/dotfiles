@@ -8,5 +8,5 @@ xrandr --output eDP1 --off
 # set the second screen
 xrandr --output DP1 --mode 1920x1080
 
-# update your window manager
+# update window manager
 i3-msg restart
