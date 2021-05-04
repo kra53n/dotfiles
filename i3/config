@@ -192,8 +192,6 @@ bindsym $mod+r mode "resize"
 #}
 #       font pango:DejaVu Sans Mono 9
 #}
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/polybar/pol3/launch.sh
 
 # window title alignment
 title_align center
@@ -262,4 +260,7 @@ focus_follows_mouse no
 # for changing language toggle right control
 # for other bindings go to -
 # -> https://unix.stackexchange.com/questions/45447/other-than-alt-shift-to-switch-keyboard-layout-any-other-xorg-key-combination
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always "setxkbmap -model pc105 -layout us,ru -variant ,, -option grp:rctrl_toggle"
+exec_always ~/.bin/permoscreen
+exec_always --no-startup-id $HOME/.config/polybar/pol3/launch.sh

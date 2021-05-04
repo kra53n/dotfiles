@@ -1,12 +1,63 @@
-#!/bin/bash
+#!/bin/python
 
-# turn off the screen of laptop
-# to know what you can have instead eDP1 jusy paste this
-# xrandr
-xrandr --output eDP1 --off
+"""
+author: Krai53n
 
-# set the second screen
-xrandr --output DP1 --mode 1920x1080
+Script thar control the monitors on i3wm.
+Other wm or de I didn`t check.
 
-# update window manager
-i3-msg restart
+Requirements:
+    - xrandr
+"""
+
+import subprocess
+
+
+MONITORS = (
+    "eDP1",
+    "DP1",
+)
+
+
+def check_monitor(monitor_name, text_checking):
+    connect_message = monitor_name + " disconnected"
+    if connect_message not in text_checking:
+        return 1
+    return 0
+
+
+class Xrandr:
+    def __init__(self):
+        self.__xr = ["xrandr"]
+        self.__out = ["--output"]
+        self.__on = ["--mode", "1920x1080"]
+        self.__off = ["--off"]
+
+    def get(self):
+        return subprocess.Popen(
+            self.__xr,
+            stdout=subprocess.PIPE
+        ).communicate()[0].decode("utf-8")
+
+    def off(self, monitor_name):
+        subprocess.run(self.__xr + self.__out + monitor_name + self.__off)
+
+    def on(self, monitor_name):
+        subprocess.run(self.__xr + self.__out + monitor_name + self.__on)
+
+
+if __name__ == "__main__":
+    xrandr = Xrandr()
+    count = 0
+    monitor_laptop = ["eDP1"]
+    monitor_samsung = ["DP1"]
+    for monitor in MONITORS:
+        if check_monitor(monitor, xrandr.get()):
+            count += 1
+
+    if count == 1:
+        xrandr.on(monitor_laptop)
+
+    if count == 2:
+        xrandr.off(monitor_laptop)
+        xrandr.on(monitor_samsung)
