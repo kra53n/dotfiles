@@ -1,0 +1,47 @@
+#!/bin/python
+
+"""
+author: Krai53n
+
+Requirements:
+    - youtube_dl
+    - ffmpeg
+    - telethon
+    - ytdl(https://github.com/Krai53n/ytdl)
+"""
+
+from telethon import TelegramClient
+from ytdl import Ytdl
+from sys import argv
+
+from os import remove
+from os import getcwd
+
+import subprocess
+import os.path
+
+
+class Tg:
+    """
+    Working with Telegram
+    """
+    def __init__(self, path):
+        path_anon = "your path to anon file not incliding file extension `.session`"
+        api_id = "your id"
+        api_hash = "your hash"
+        self.client = TelegramClient(path_anon, api_id, api_hash)
+
+        with self.client:
+            self.client.loop.run_until_complete(self.__send_file(path))
+
+    async def __send_file(self, path):
+        await self.client.send_file("me", path)
+
+
+if __name__ == "__main__":
+    args = argv[1:]
+    for arg in args:
+        filename = Ytdl(arg, "audio").get_filename()
+        path = os.path.join(getcwd(), filename)
+        Tg(path)
+        remove(filename)
