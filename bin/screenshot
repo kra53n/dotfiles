@@ -7,4 +7,4 @@ FILENAME=$fileDate"-"$machineName$fileName
 FILENAMESHORT=$fileDate$fileName
 
 import $FILENAMESHORT
-mv $FILENAMESHORT $HOME/Рабочий\ стол/
+mv $FILENAMESHORT $HOME/Рабочий\ стол/screenshots

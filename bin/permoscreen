@@ -4,7 +4,7 @@
 author: Krai53n
 
 Script thar control the monitors on i3wm.
-I didn`t check other wm or de.
+Other wm or de I didn`t check.
 
 Requirements:
     - xrandr
