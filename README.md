@@ -4,13 +4,14 @@
 ### My minimal stuff
 I try to use a lot of software but only a piece I use.
 
- - shell - fish
+ - shell - Fish
+ - terminal - Alacritty
  - gui file manager - Thunar
  - tui file manager - Ranger
- - text editor - vim or nvim
- - pdf reader - okular
+ - text editor - Vim or Nvim
+ - pdf reader - Okular
  - video recorder - OBS
- - videoplayer and audioplayer - mpv
+ - videoplayer and audioplayer - Mpv
 
 P.S.: if you know software that could be better, please tell me about this
 
