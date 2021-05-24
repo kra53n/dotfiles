@@ -13,7 +13,7 @@ I try to use a lot of software but only a piece I use.
  - video recorder - OBS
  - videoplayer and audioplayer - Mpv
 
-P.S.: if you know software that could be better, please tell me about this
+P.S.: if you know software that could be better, please tell me about it.
 
 
 ### Cool themes
