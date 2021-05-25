@@ -83,3 +83,13 @@ let g:airline_symbols.linenr = ''
 
 
 set fillchars+=vert:\$
+
+
+" Custom Configuration
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
