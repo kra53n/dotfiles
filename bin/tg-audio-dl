@@ -26,7 +26,7 @@ class Tg:
     Working with Telegram
     """
     def __init__(self, path):
-        path_anon = "/home/kra53n/anon"
+        path_anon = "path to anon.session file"
         api_id = "7777777"
         api_hash = "77777777777777777777777777777777"
         self.client = TelegramClient(path_anon, api_id, api_hash)
