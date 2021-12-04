@@ -12,7 +12,7 @@ set colorcolumn=79
 call plug#begin()
 
 Plug 'morhetz/gruvbox'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+Plug 'preservim/nerdtree'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn installl' }
 
 call plug#end()
