@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pathfile=$HOME/.bin/todo.md
+date_string=("### $(date +"%x")")
+file_first_line=$(head -n 1 $pathfile)
+
+if [ "$date_string" != "$file_first_line" ]; then
+    sed -i "1,1s/^/${date_string}\n/" $pathfile
+fi
+
+nvim $pathfile
