@@ -38,7 +38,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -nf '#88c0d0' -nb '#2e3440' -sb '#88c0d0' -sf '#EEEEEE' -fn 'jetbrainsmono-11.5' -p '~'"
+bindsym $mod+d exec "dmenu_run -nf '#bdae93' -nb '#1d2021' -sb '#3c3836' -sf '#bdae93' -fn 'jetbrainsmono-11.5' -p '~'"
 
 # change focus
 bindsym $mod+h focus left
