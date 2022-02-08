@@ -4,14 +4,13 @@
 author: Krai53n
 
 Requirements:
-    - youtube_dl
+    - yt-dlp
     - ffmpeg
     - telethon
-    - ytdl(https://github.com/Krai53n/ytdl)
 """
 
 from telethon import TelegramClient
-from ytdl import Ytdl
+from yt_dlp import YoutubeDL
 from sys import argv
 
 from os import remove
@@ -19,6 +18,41 @@ from os import getcwd
 
 import subprocess
 import os.path
+
+
+def del_from_end_to_symbol(text, symbol, offset=0):
+    for i in range(len(text)-1, 0, -1):
+        if text[i] == symbol:
+            return text[:i+offset]
+    return text
+
+def get_filename(url):
+    cmd = f"yt-dlp --get-filename {url}"
+    proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+    output = proc.communicate()[0]
+    return output.decode("utf-8")[:-1]
+
+def convert(filename1, filename2):
+    cmd = "ffmpeg", "-i", f"{filename1}", f"{filename2}"
+    subprocess.run(cmd)
+
+def dl(urls):
+    ydl_opts = {'format': 'bestaudio'}
+    with YoutubeDL(ydl_opts) as ydl:
+        ydl.download(urls)
+
+    filenames = []
+    filenames_converted = []
+
+    for url in urls:
+        filename = get_filename(url)
+        filename_converted = del_from_end_to_symbol(filename, "[", -1) + ".mp3"
+
+        filenames.append(filename)
+        filenames_converted.append(filename_converted)
+
+        convert(filename, filename_converted)
+    return filenames, filenames_converted
 
 
 class Tg:
@@ -39,9 +73,10 @@ class Tg:
 
 
 if __name__ == "__main__":
-    args = argv[1:]
-    for arg in args:
-        filename = Ytdl(arg, "audio").get_filename()
-        path = os.path.join(getcwd(), filename)
-        Tg(path)
-        remove(filename)
+    urls = argv[1:]
+    filenames, filenames_converted = dl(urls)
+
+    for i in range(len(urls)):
+        Tg(filenames_converted[i])
+        remove(filenames[i])
+        remove(filenames_converted[i])
