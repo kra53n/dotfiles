@@ -14,7 +14,6 @@ from yt_dlp import YoutubeDL
 from sys import argv
 
 from os import remove
-from os import getcwd
 
 import subprocess
 import os.path
