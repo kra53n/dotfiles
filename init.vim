@@ -31,7 +31,7 @@ endif
 
 nnoremap <leader>b :CHADopen<cr>
 nnoremap <leader>m :MarkdownPreview<cr>
-nnoremap <leader>s :w<cr>
+nnoremap <leader>s :call ProcessFile()<cr><cr>
 nnoremap <leader>q :wq<cr>
 nnoremap <leader>r :!python "%:t"&<cr><cr>
 nnoremap ,<space> :nohlsearch<cr>
@@ -40,3 +40,15 @@ noremap q <C-Q>
 noremap <F2> <C-r>
 nnoremap Y VYdd
 inoremap <M-p> <C-p>
+
+
+function ProcessFile()
+    :w
+
+    if expand("%:t:e") == "tex"
+        :!pdflatex %:t
+    endif
+endfunction
+
+
+echo " >^.^< Welcome, to nvim, bro!)"
