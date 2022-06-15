@@ -3,8 +3,10 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
-    use 'rstacruz/vim-closer'
     use 'ayu-theme/ayu-vim'
+    use 'rstacruz/vim-closer'
+    use 'cohama/lexima.vim'
+    use 'powerman/vim-plugin-ruscmd'
 
     use { 'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
@@ -17,6 +19,14 @@ return require('packer').startup(function()
         },
         tag = 'nightly',
     }
+
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/cmp-path'
 
     use {
       'nvim-telescope/telescope.nvim',
