@@ -10,7 +10,6 @@ return require('packer').startup(function()
     use 'mhartington/oceanic-next'
 
     -- BRACKETS CLOSERS
-    --use 'rstacruz/vim-closer'
     use 'cohama/lexima.vim'
 
     -- BEAUTIFUL PLUGINS
