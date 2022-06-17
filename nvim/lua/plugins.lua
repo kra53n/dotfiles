@@ -10,7 +10,6 @@ return require('packer').startup(function()
     use 'mhartington/oceanic-next'
 
     -- BRACKETS CLOSERS
-    --use 'rstacruz/vim-closer'
     use 'cohama/lexima.vim'
 
     -- BEAUTIFUL PLUGINS
@@ -57,8 +56,10 @@ return require('packer').startup(function()
         ft = { "markdown" },
     })
 
-    -- MOVEMENT AND VIM INTERACTION
+    -- MOVEMENT
     use 'joeytwiddle/sexy_scroller.vim'
     use 'yuttie/comfortable-motion.vim'
+
+    -- VIM INTERACTION
     use 'powerman/vim-plugin-ruscmd'
 end)
