@@ -9,7 +9,7 @@ end
 
 set_maps(
     '',
-    {noremap = true, silent = false},
+    { noremap = true, silent = false },
     {
         {'q', '<C-Q>'},
         {'<F2>', '<C-r>'},
@@ -18,22 +18,23 @@ set_maps(
 
 set_maps(
     'n',
-    {noremap = true, silent = true},
+    { noremap = true, silent = true },
     {
+        { '<leader>s', ':w<cr>' },
         { '<leader>q', ':wq<cr>' },
         { ',<space>', ':nohlsearch<cr>' },
         { 'Y', 'VYdd' },
         { '<leader>b', ':NvimTreeToggle<cr>' },
         { '<leader>m', ':MarkdownPreview<cr>' },
         { 'gt', ':BufferLineCycleNext<cr>' },
-        { 'GT', ':BufferLineCyclePrev<cr>' },
+        { 'gT', ':BufferLineCyclePrev<cr>' },
         { 'ff', ':Telescope find_files<cr>' },
     }
 )
 
 set_maps(
     'i',
-    {noremap = true, silent = true},
+    { noremap = true, silent = true },
     {
         { '<M-p>', '<C-p>' },
     }

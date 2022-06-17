@@ -1,6 +1,8 @@
 local opt = vim.opt
 local cmd = vim.cmd
 
+opt.swapfile = false
+opt.encoding = 'utf-8'
 
 opt.mouse = 'a'
 opt.scrolloff = 5
@@ -28,3 +30,8 @@ require 'bufferline'.setup {
 }
 require 'lualine'.setup {}
 require 'nvim-tree'.setup {}
+
+--vim.o.completeopt = 'menuone,noselect'
+--require 'luasnip'.setup {
+--
+--}

@@ -3,11 +3,17 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
+    -- THEMES
+    use 'morhetz/gruvbox'
     use 'ayu-theme/ayu-vim'
-    use 'rstacruz/vim-closer'
-    use 'cohama/lexima.vim'
-    use 'powerman/vim-plugin-ruscmd'
+    use 'kaicataldo/material.vim'
+    use 'mhartington/oceanic-next'
 
+    -- BRACKETS CLOSERS
+    --use 'rstacruz/vim-closer'
+    use 'cohama/lexima.vim'
+
+    -- BEAUTIFUL PLUGINS
     use { 'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
     }
@@ -20,6 +26,7 @@ return require('packer').startup(function()
         tag = 'nightly',
     }
 
+    -- LSP SERVER
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/nvim-cmp'
@@ -28,6 +35,7 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-path'
 
+    -- FINDERS
     use {
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
@@ -37,6 +45,7 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
+    -- VIEWERS
     use ({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -48,6 +57,8 @@ return require('packer').startup(function()
         ft = { "markdown" },
     })
 
+    -- MOVEMENT AND VIM INTERACTION
     use 'joeytwiddle/sexy_scroller.vim'
     use 'yuttie/comfortable-motion.vim'
+    use 'powerman/vim-plugin-ruscmd'
 end)
