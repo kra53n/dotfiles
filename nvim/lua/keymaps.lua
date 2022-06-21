@@ -1,3 +1,5 @@
+require 'funcs'
+
 local map = vim.api.nvim_set_keymap
 
 function set_maps(mode, opts, maps)
@@ -20,9 +22,10 @@ set_maps(
     'n',
     { noremap = true, silent = true },
     {
-        { '<leader>s', ':w<cr>' },
-        { '<leader>q', ':wq<cr>' },
+        { '<leader>s', ':Save<cr>' },
+        { '<leader>q', ':Exit<cr>' },
         { ',<space>', ':nohlsearch<cr>' },
+        { '.<space>', ':ChangeColorcolumn<cr>' },
         { 'Y', 'VYdd' },
         { '<leader>b', ':NvimTreeToggle<cr>' },
         { '<leader>m', ':MarkdownPreview<cr>' },
