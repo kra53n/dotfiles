@@ -1,5 +1,4 @@
 require 'funcs'
-
 local map = vim.api.nvim_set_keymap
 
 function set_maps(mode, opts, maps)
