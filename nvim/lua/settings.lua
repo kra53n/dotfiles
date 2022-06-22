@@ -20,7 +20,7 @@ opt.expandtab = true
 opt.termguicolors = true
 
 
-cmd 'colorscheme ayu'
+cmd 'colorscheme onedarker'
 
 
 require 'bufferline'.setup {

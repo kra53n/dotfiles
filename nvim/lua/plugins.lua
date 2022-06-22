@@ -8,9 +8,13 @@ return require('packer').startup(function()
     use 'ayu-theme/ayu-vim'
     use 'kaicataldo/material.vim'
     use 'mhartington/oceanic-next'
+    use 'LunarVim/onedarker.nvim'
 
     -- BRACKETS CLOSERS
     use 'cohama/lexima.vim'
+
+    -- Comments
+    use 'tpope/vim-commentary'
 
     -- BEAUTIFUL PLUGINS
     use { 'nvim-lualine/lualine.nvim',
