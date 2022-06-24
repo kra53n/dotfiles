@@ -6,12 +6,9 @@ function change_colorcolumn()
     local cols = { 0, 79, 121 }
     table.sort(cols)
 
-    if colorcolumn == nil then
+    if colorcolumn == nil or colorcolumn >= cols[#cols] then
         opt.colorcolumn = tostring(cols[1])
         return
-    end
-    if colorcolumn >= cols[#cols] then
-        opt.colorcolumn = tostring(cols[1])
     end
     for _, col in ipairs(cols) do
         if colorcolumn < col then
