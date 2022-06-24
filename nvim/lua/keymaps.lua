@@ -1,5 +1,4 @@
 require 'funcs'
-
 local map = vim.api.nvim_set_keymap
 
 function set_maps(mode, opts, maps)
@@ -24,6 +23,7 @@ set_maps(
     {
         { '<leader>s', ':Save<cr>' },
         { '<leader>q', ':Exit<cr>' },
+        { '<leader>r', ':RunFile<cr>' },
         { ',<space>', ':nohlsearch<cr>' },
         { '.<space>', ':ChangeColorcolumn<cr>' },
         { 'Y', 'VYdd' },
