@@ -39,7 +39,6 @@ function run_file()
         ['lua'] = '!lua '..filename..'' ,
     }
     vim.cmd(switch[file_extension])
-    -- print(switch[file_extension])
 end
 
 create_cmd('ChangeColorcolumn', change_colorcolumn, {})
