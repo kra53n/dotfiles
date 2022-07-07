@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# feh --bg-scale ~/Изображения/IMG_20200616_163752_767.jpg
-#feh --bg-scale ~/Загрузки/John_Atkinson_Grimshaw_-_Shipping_on_the_Clyde_\(1881\).jpg
-feh --bg-center ~/Загрузки/63497413.jpg
