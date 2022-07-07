@@ -18,15 +18,15 @@ function change_colorcolumn()
     end
 end
 
-function execute_cmd_row_ignoring_errors(...)
+function execute_cmds_ignoring_errs(...)
     local row = {...}
     for _, elem in ipairs(row) do
         pcall(vim.fn.execute, elem)
     end
 end
 
-function exit() execute_cmd_row_ignoring_errors('wq', 'q', 'q!') end
-function save() execute_cmd_row_ignoring_errors('w', 'w!')       end
+function exit() execute_cmds_ignoring_errs('wq', 'q', 'q!') end
+function save() execute_cmds_ignoring_errs('w', 'w!')       end
 
 function run_file()
     local filename = vim.fn.expand('%:t')
@@ -34,7 +34,9 @@ function run_file()
     local switch = {
         ['py'] = '!python '..filename..'' ,
         ['lua'] = '!lua '..filename..'' ,
+        ['js'] = '!node '..filename..'',
     }
+    save()
     vim.cmd(switch[file_extension])
 end
 

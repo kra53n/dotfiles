@@ -9,6 +9,7 @@ return require('packer').startup(function()
     use 'kaicataldo/material.vim'
     use 'mhartington/oceanic-next'
     use 'LunarVim/onedarker.nvim'
+    use 'rebelot/kanagawa.nvim'
 
     -- BRACKETS CLOSERS
     use 'cohama/lexima.vim'
@@ -50,10 +51,6 @@ return require('packer').startup(function()
     }
 
     -- VIEWERS
-    use ({
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    })
     use ({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",

@@ -20,7 +20,7 @@ opt.expandtab = true
 opt.termguicolors = true
 
 
-cmd 'colorscheme onedarker'
+cmd 'colorscheme kanagawa'
 
 
 require 'bufferline'.setup {
@@ -32,6 +32,7 @@ require 'lualine'.setup {}
 require 'nvim-tree'.setup {}
 
 require 'lspconfig'.pyright.setup {}
+require 'lspconfig'.rust_analyzer.setup {}
 local cmp = require 'cmp'
 
 cmp.setup({
@@ -43,7 +44,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<A-p>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
