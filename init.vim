@@ -31,4 +31,4 @@ function ChangeColorcolumn()
 endfunction
 
 
-echo " >^.^< Welcome, to nvim, bro!)"
+echo " >^.^< Welcome, to vim, bro!)"
