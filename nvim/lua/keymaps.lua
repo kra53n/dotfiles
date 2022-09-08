@@ -20,6 +20,7 @@ set_maps(
     'n',
     { noremap = true, silent = true },
     {
+        {'m', 'q'},
         { '<leader>s', ':Save<cr>' },
         { '<leader>q', ':Exit<cr>' },
         { '<leader>r', ':RunFile<cr>' },
@@ -31,6 +32,7 @@ set_maps(
         { 'gt', ':BufferLineCycleNext<cr>' },
         { 'gT', ':BufferLineCyclePrev<cr>' },
         { 'ff', ':Telescope find_files<cr>' },
+        { 'fg', ':Telescope live_grep<cr>' },
     }
 )
 

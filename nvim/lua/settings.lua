@@ -20,8 +20,11 @@ opt.expandtab = true
 opt.termguicolors = true
 
 
-cmd 'colorscheme kanagawa'
+cmd 'colorscheme gruvbox'
+vim.o.background = 'dark'
 
+
+require 'colorizer'.setup()
 
 require 'bufferline'.setup {
     options = {

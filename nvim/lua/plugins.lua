@@ -10,6 +10,9 @@ return require('packer').startup(function()
     use 'mhartington/oceanic-next'
     use 'LunarVim/onedarker.nvim'
     use 'rebelot/kanagawa.nvim'
+    use 'andreasvc/vim-256noir'
+    use 'folke/tokyonight.nvim'
+    use 'Yazeed1s/minimal.nvim'
 
     -- BRACKETS CLOSERS
     use 'cohama/lexima.vim'
@@ -29,6 +32,8 @@ return require('packer').startup(function()
         },
         tag = 'nightly',
     }
+    use 'norcalli/nvim-colorizer.lua'
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- LSP SERVER
     use 'neovim/nvim-lspconfig'
